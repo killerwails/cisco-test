@@ -17,9 +17,12 @@ urls = (
 
 class lookup: 
     def GET(self, hostname, port, original_path_and_query_string): 
-        vars = dict(hostname=hostname,port=port,url=original_path_and_query_string)
-        results = db.query('select * from mockData where hostname=$hostname and port=$port and url=$url', vars=vars)
-        return results
+        from pprint import pprint
+        vars = dict(hostname=hostname,port=port,url=original_path_and_query_string+"?"+ web.ctx.environ['QUERY_STRING'])
+        results = db.query('select count(*) as matches from mockData where hostname=$hostname and port=$port and url=$url', vars=vars)
+        matches = results[0].matches
+#        print env['QUERY_STRING']
+        return matches
 
 if __name__ == "__main__": 
 	app = web.application(urls, globals())
