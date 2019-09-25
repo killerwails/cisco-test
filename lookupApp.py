@@ -6,7 +6,7 @@ db = web.database(
     dbn='mysql',
     host='127.0.0.1',
     user='lookupService',
-    pw='q8776G~2BYf67',
+    pw='d85g2J~oo77D',
     db='cisco',
 )
 
@@ -40,9 +40,4 @@ class lookup:
 if __name__ == "__main__": 
 	app = web.application(urls, globals())
 	app.run()
-
-
-
-#	curl http://urlinfo.com/{hostname_and_port}/{original_path_and_query_string} 
-
 

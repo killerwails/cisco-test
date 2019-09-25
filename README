@@ -1,0 +1,36 @@
+Set up
+=============
+1. Import MYSQL mock data.
+Run the following command:
+
+`mysql < mockDB.sql.gz `
+
+2.Start the server.
+In the same directory as lookupApp.py run:
+
+` python lookupApp.py` 
+
+You should see the response:
+
+http://0.0.0.0:8080/
+
+Execution
+=============
+You will need three parameters: 
+
+HOSTNAME
+PORT
+PATH_AND_QUERY
+
+In another terminal, call the script with a curl like this: 
+
+curl 'http://localhost:8080/urlinfo/1/HOSTNAME:PORT/PATH_AND_QUERY'
+
+The script will respond with an OK if the url is safe. If there is a match in the database, it will respond with DANGEROUS
+
+Unit Tests
+=============
+
+To run the unit tests: 
+
+`python -m unittest test-lookupApp`
