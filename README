@@ -1,11 +1,14 @@
 Set up
 =============
-1. Import MYSQL mock data.
-Run the following command:
+1. Import MYSQL mock data:
 
 `mysql < mockDB.sql.gz `
 
-2.Start the server.
+2.Install python modules: 
+
+`pip install -r requirements.txt`
+
+3.Start the server.
 In the same directory as lookupApp.py run:
 
 ` python lookupApp.py` 
